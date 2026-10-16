@@ -133,7 +133,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true, device = "spec:width=360dp,height=640dp")
+@Preview(showBackground = true, showSystemUi = true, device = "id:pixel_7")
 @Composable
 fun FormDataDiriPreview() {
     FormDataDiri()
