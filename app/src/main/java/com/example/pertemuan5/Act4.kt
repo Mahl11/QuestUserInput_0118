@@ -2,8 +2,13 @@ package com.example.pertemuan5
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -36,7 +41,21 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
             value = textNama,
             singleLine = true,
             label = { Text("Nama Lengkap") },
-            onValueChange = { textNama = it }
+            onValueChange =
+                {
+                    textNama = it
+                }
         )
-    }
-}
+
+        // field alamat
+        OutlinedTextField(
+            value = textAlamat,
+            singleLine = true,
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.width(250.dp),
+            label = { Text(text = "Alamat") },
+            onValueChange = {
+                textAlamat = it
+            }
+        )
+
