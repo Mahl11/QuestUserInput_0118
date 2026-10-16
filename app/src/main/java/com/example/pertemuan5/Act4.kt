@@ -103,7 +103,7 @@ fun FormDataDiri(
                 bottom = dimensionResource(id = R.dimen.padding_medium),
                 top = dimensionResource(id = R.dimen.padding_medium)
             ),
-            thickness = dimensionResource(1dp),
+            thickness = dimensionResource(1 dp),
             color = Color.DarkGray
         )
         Button(
@@ -111,9 +111,9 @@ fun FormDataDiri(
             // the button is enabled when the user makes a selection
             enabled = textAlamat.isNotEmpty(),
             onClick = {
-                nama=textNama
-                jenis=textJK
-                alamat=textAlamat
+                nama = textNama
+                jenis = textJK
+                alamat = textAlamat
             }
         ) {
             Text(stringResource(id = R.string.submit))
@@ -128,10 +128,18 @@ fun FormDataDiri(
             thickness = dimensionResource(id = R.dimen.divider_tipis),
             color = Color.DarkGray
         )
-        ElevatedCard (
+        ElevatedCard(
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
                 .height(100.dp)
                 .width(300.dp)
         ) {
+            Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp)) {
+                Text(text = "Nama : " + nama, color = Color.White)
+                Text(text = "Gender : " + jenis, color = Color.White)
+                Text(text = "Alamat : " + alamat, color = Color.White)
+            }
+        }
+    }
+}
