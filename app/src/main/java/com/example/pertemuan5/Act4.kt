@@ -26,13 +26,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FormDataDiri(
-    modifier: Modifier = Modifier,
-    fillMaxWidth: Modifier.Companion.(Float) -> Modifier
-) {
+fun FormDataDiri(modifier: Modifier = Modifier) {
     // variabel untuk mengingat nilai masukan dari keyboard
     var textNama by remember { mutableStateOf("") }
     var textAlamat by remember { mutableStateOf("") }
@@ -52,22 +50,11 @@ fun FormDataDiri(
         OutlinedTextField(
             value = textNama,
             singleLine = true,
-            label = { Text("Nama Lengkap") },
-            onValueChange =
-                {
-                    textNama = it
-                }
-        )
-
-        // field alamat
-        OutlinedTextField(
-            value = textAlamat,
-            singleLine = true,
             shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
-            label = { Text(text = "Alamat") },
+            label = { Text(text = "Nama Lengkap") },
             onValueChange = {
-                textAlamat = it
+                textNama = it
             }
         )
 
@@ -89,6 +76,8 @@ fun FormDataDiri(
                 }
             }
         }
+
+        // field alamat
         OutlinedTextField(
             value = textAlamat,
             singleLine = true,
@@ -144,8 +133,8 @@ fun FormDataDiri(
     }
 }
 
-
-
-
-
-
+@Preview(showBackground = true, device = "spec:width=360dp,height=640dp")
+@Composable
+fun FormDataDiriPreview() {
+    FormDataDiri()
+}
