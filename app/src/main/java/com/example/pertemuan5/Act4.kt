@@ -103,7 +103,7 @@ fun FormDataDiri(
                 bottom = dimensionResource(id = R.dimen.padding_medium),
                 top = dimensionResource(id = R.dimen.padding_medium)
             ),
-            thickness = dimensionResource(1 dp),
+            thickness = dimensionResource(id = R.dimen.divider_tipis),
             color = Color.DarkGray
         )
         Button(
@@ -143,3 +143,9 @@ fun FormDataDiri(
         }
     }
 }
+
+
+
+
+
+
